@@ -97,8 +97,8 @@ export default function PrimarySearchAppBar() {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>پروفایل</MenuItem>
-            <MenuItem onClick={handleMenuClose}>حساب کاربری</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
         </Menu>
     );
 
@@ -163,7 +163,7 @@ export default function PrimarySearchAppBar() {
                         edge="start"
                         color="inherit"
                         aria-label="open drawer"
-                        sx={{ ml: 2 }}
+                        sx={{ mr: 2 }}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -173,17 +173,16 @@ export default function PrimarySearchAppBar() {
                         component="div"
                         sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
-                        MYSHOP
+                        MUI
                     </Typography>
                     <Search>
-                        <SearchIconWrapper style={{ marginRight: 180 }}>
+                        <SearchIconWrapper>
                             <SearchIcon />
                         </SearchIconWrapper>
                         <StyledInputBase
-                            placeholder="جستجو"
+                            placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
                         />
-
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
