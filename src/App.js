@@ -1,3 +1,4 @@
+import Filter from "./Components/Filter/Filter";
 import PrimarySearchAppBar from "./Components/NavBar/NavBar";
 
 function App() {
@@ -5,7 +6,9 @@ function App() {
     <>
       <PrimarySearchAppBar />
       <div className="container">
-        <main></main>
+        <main className="main">
+          <Filter />
+        </main>
         <footer></footer>
       </div>
     </>
