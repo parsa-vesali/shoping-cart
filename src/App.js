@@ -1,17 +1,14 @@
-import Filter from "./Components/Filter/Filter";
-import PrimarySearchAppBar from "./Components/NavBar/NavBar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+
 
 function App() {
   return (
-    <>
-      <PrimarySearchAppBar />
-      <div className="container">
-        <main className="main">
-          <Filter />
-        </main>
-        <footer></footer>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
