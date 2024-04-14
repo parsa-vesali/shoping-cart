@@ -7,6 +7,9 @@ export default function Home() {
     const [item, setItem] = useState(data.products)
     const [sort, setSort] = useState('asc')
     const [brand, setBrand] = useState('')
+    const [cartItems, setCartItems] = useState([])
+
+
 
     const sortProduct = (event) => {
         setSort(event.target.value)
@@ -30,6 +33,20 @@ export default function Home() {
         }
     }
 
+
+    const addProduct = (product) => {
+        const exist = cartItems.find((element) => element.id === product.id)
+        if (exist) {
+            setCartItems(
+                cartItems.map((element) => element.id === product.id ? { ...exist, qty: exist.qty + 1 } : element)
+            )
+        } else {
+
+            setCartItems([...cartItems, { ...product }])
+        }
+
+    }
+
     return (
         <>
             <header>
@@ -43,10 +60,10 @@ export default function Home() {
                         brand={brand}
                         filterProducts={filterProducts}
                     />
-                    <Products item={item} />
+                    <Products item={item} addProduct={addProduct} />
                 </div>
                 <div className="sidebar">
-                    <Cart />
+                    <Cart cartItems={cartItems} />
                 </div>
             </div>
             <footer></footer>

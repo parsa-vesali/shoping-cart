@@ -24,7 +24,7 @@ export default function Filter(props) {
                 <select value={props.brand} onChange={props.filterProducts}>
                     <option value="">همه</option>
                     <option value="samsung">سامسونگ</option>
-                    <option value="iphone">آیفون</option>
+                    <option value="iphone">اپل</option>
                     <option value="blackberry">شیامی</option>
                     <option value="sony">هواوی</option>
                 </select>

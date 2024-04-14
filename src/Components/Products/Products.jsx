@@ -10,7 +10,7 @@ export default function Products(props) {
                             <img src={item.image} alt="" />
                             <p>{item.title}</p>
                             <div className="product-price">
-                                <button>افزودن به سبد خرید</button>
+                                <button onClick={() => props.addProduct(item)}>افزودن به سبد خرید</button>
                                 <div className="price">{item.price}</div>
                             </div>
                         </div>
