@@ -21,14 +21,12 @@ export default function Filter(props) {
             </div>
             <div className="brand">
                 برند ها
-                <select>
+                <select value={props.brand} onChange={props.filterProducts}>
                     <option value="">همه</option>
-                    <option value="">سامسونگ</option>
-                    <option value="">آیفون</option>
-                    <option value="">موتورولا</option>
-                    <option value="">بلک بری</option>
-                    <option value="">ال جی</option>
-                    <option value="">سونی</option>
+                    <option value="samsung">سامسونگ</option>
+                    <option value="iphone">آیفون</option>
+                    <option value="blackberry">شیامی</option>
+                    <option value="sony">هواوی</option>
                 </select>
             </div>
         </div>

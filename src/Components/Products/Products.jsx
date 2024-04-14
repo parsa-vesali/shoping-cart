@@ -7,7 +7,7 @@ export default function Products(props) {
                 {props.item.map(item => (
                     <li key={item.id}>
                         <div className="product">
-                            <img src="./img/1.jpg" alt="" />
+                            <img src={item.image} alt="" />
                             <p>{item.title}</p>
                             <div className="product-price">
                                 <button>افزودن به سبد خرید</button>

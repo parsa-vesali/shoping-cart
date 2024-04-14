@@ -6,6 +6,7 @@ import data from '../data.json'
 export default function Home() {
     const [item, setItem] = useState(data.products)
     const [sort, setSort] = useState('asc')
+    const [brand, setBrand] = useState('')
 
     const sortProduct = (event) => {
         setSort(event.target.value)
@@ -16,6 +17,19 @@ export default function Home() {
             setItem(data.products.sort((a, b) => (a.id > b.id ? 1 : -1)))
         }
     }
+
+
+
+    const filterProducts = (event) => {
+        if (event.target.value === '') {
+            setBrand(event.target.value)
+            setItem(data.products)
+        } else {
+            setBrand(event.target.value)
+            setItem(data.products.filter((product) => product.availableBrand.indexOf(event.target.value) >= 0))
+        }
+    }
+
     return (
         <>
             <header>
@@ -23,7 +37,12 @@ export default function Home() {
             </header>
             <div className="content">
                 <div className="main">
-                    <Filter count={item.length} sortProduct={sortProduct} />
+                    <Filter
+                        count={item.length}
+                        sortProduct={sortProduct}
+                        brand={brand}
+                        filterProducts={filterProducts}
+                    />
                     <Products item={item} />
                 </div>
                 <div className="sidebar">
