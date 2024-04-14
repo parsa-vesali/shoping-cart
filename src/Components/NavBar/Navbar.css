@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.logo {
+    color: #06b6d4;
+    cursor: pointer;
+}
+
+
+.navbar svg {
+    font-size: 3rem;
+    cursor: pointer;
+}

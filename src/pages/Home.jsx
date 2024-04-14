@@ -3,6 +3,7 @@ import Cart from "../Components/Cart/Cart";
 import Filter from "../Components/Filter/Filter";
 import Products from "../Components/Products/Products";
 import data from '../data.json'
+import EnableColorOnDarkAppBar from '../Components/NavBar/NavBar';
 export default function Home() {
     const [item, setItem] = useState(data.products)
     const [sort, setSort] = useState('asc')
@@ -61,9 +62,7 @@ export default function Home() {
 
     return (
         <>
-            <header>
-                <a href="#">فروشگاه</a>
-            </header>
+            <EnableColorOnDarkAppBar />
             <div className="content">
                 <div className="main">
                     <Filter
@@ -78,7 +77,6 @@ export default function Home() {
                     <Cart cartItems={cartItems} removeProduct={removeProduct} />
                 </div>
             </div>
-            <footer></footer>
         </>
     )
 }

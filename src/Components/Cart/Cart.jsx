@@ -1,6 +1,10 @@
 import React from 'react'
 import formatCurrency from '../utils'
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import CheckIcon from '@mui/icons-material/Check';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { Fade } from 'react-reveal'
+
 export default function Cart(props) {
 
     const { cartItems } = props
@@ -10,9 +14,15 @@ export default function Cart(props) {
         <>
             {
                 cartItems.length === 0 ? (
-                    <div className="empty-price">سبد خرید شما خالی است</div>
+                    <div className="empty-price">
+                        <p>سبد خرید شما خالی است</p>
+                        <ErrorOutlineIcon />
+                    </div>
                 ) : (
-                    <div className="show-price">شما {cartItems.length} محصول در سبد خرید دارید</div>
+                    <div className="show-price">
+                        <p>شما {cartItems.length} محصول در سبد خرید دارید</p>
+                        <CheckIcon />
+                    </div>
                 )
             }
             <div className="cart-item">
@@ -30,9 +40,11 @@ export default function Cart(props) {
                                         <span className='qty'>{item.qty}</span>
                                     </div>
                                 </div>
-                                <div className="remove-item">
-                                    <button onClick={() => props.removeProduct(item)}>حذف کردن</button>
-                                </div>
+
+                                <button className="remove-item" onClick={() => props.removeProduct(item)}>
+                                    <RemoveCircleOutlineIcon />
+                                </button>
+
                             </div>
                         </Fade>
                     )

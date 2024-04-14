@@ -1,5 +1,5 @@
 import React from 'react'
-
+import FilterListIcon from '@mui/icons-material/FilterList';
 export default function Filter(props) {
     return (
         <div className='filter'>
@@ -7,7 +7,10 @@ export default function Filter(props) {
                 تعداد محصولات : {props.count} محصول
             </div>
             <div className="sort">
-                <div className="sort-title">مرتب سازی محصول</div>
+                <div className="sort-title">
+                    <p>مرتب سازی محصول</p>
+                    <FilterListIcon />
+                </div>
                 <div className="form-checkbox">
                     <div className="form-group">
                         <input type="radio" value='asc' name='radiovalue' onChange={props.sortProduct} />
